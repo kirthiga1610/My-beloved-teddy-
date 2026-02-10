@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Teddy Day Proposal 🧸❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #2b1055, #000);
+  color: white;
+  overflow: hidden;
+}
+
+/* Music hint */
+.tap {
+  position: fixed;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: #ffd1dc;
+}
+
+/* Proposal card */
+.card {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.08);
+  padding: 22px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255,105,180,0.4);
+}
+
+.card h1 {
+  color: #ffb6c1;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Teddy walking */
+.teddy {
+  position: absolute;
+  bottom: 10px;
+  left: -120px;
+  font-size: 90px;
+  cursor: pointer;
+  animation: walk 6s linear infinite;
+}
+
+@keyframes walk {
+  0% { left: -120px; }
+  50% { left: 45%; }
+  100% { left: 110%; }
+}
+
+/* Popup image */
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.popup img {
+  max-width: 85%;
+  border-radius: 16px;
+  box-shadow: 0 0 30px pink;
+}
+
+.popup h2 {
+  margin-top: 15px;
+  color: #ffb6c1;
+}
+
+.close {
+  margin-top: 12px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  background: #ff69b4;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body onclick="playSong()">
+
+<div class="tap">Tap once to feel my love 🎵💖</div>
+
+<!-- Tamil Romantic Song -->
+<audio id="song" autoplay loop>
+  <source src="tamil-song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Teddy walking -->
+<div class="teddy" onclick="openPopup()">🧸</div>
+
+<!-- Proposal Text -->
+<div class="card">
+  <h1>Happy Teddy Day 🧸</h1>
+  <p>
+    This teddy is walking from my heart to you…  
+    Just like this teddy, I want to come to you every day,  
+    hold you forever and never leave your side 💖  
+    <br><br>
+    Will you be mine always?
+  </p>
+</div>
+
+<!-- Popup Image -->
+<div class="popup" id="popup">
+  <img src="our-photo.jpg" alt="Our Love">
+  <h2>I choose you… always ❤️</h2>
+  <button class="close" onclick="closePopup()">Close 💕</button>
+</div>
+
+<script>
+function openPopup() {
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+function playSong() {
+  document.getElementById("song").play();
+}
+</script>
+
+</body>
+</html>
